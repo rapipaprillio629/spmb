@@ -1,0 +1,374 @@
+.ds-layout {
+  --navy: #10244f;
+  --blue: #1d4ed8;
+  --blue-soft: #e8eefc;
+  --bg: #f3f6fc;
+  --text: #0f1b3d;
+  --muted: #6b7694;
+  --line: #e6eaf3;
+  --green: #15803d;
+
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.ds-layout *,
+.ds-layout *::before,
+.ds-layout *::after {
+  box-sizing: border-box;
+}
+
+/* Sidebar */
+.ds-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--navy);
+  color: #fff;
+  padding: 18px 14px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.ds-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 6px 22px;
+}
+
+.ds-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #f5c542;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+
+.ds-brand-name {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.ds-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ds-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #c9d3ec;
+  font-size: 13px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.ds-nav-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ds-nav-item--active {
+  background: var(--blue);
+  color: #fff;
+  font-weight: 600;
+}
+
+.ds-nav-icon {
+  width: 18px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.ds-help {
+  margin-top: auto;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #dbe3f7;
+}
+
+.ds-help p {
+  margin: 2px 0 0;
+}
+
+/* Main */
+.ds-main {
+  flex: 1;
+  min-width: 0;
+  padding: 24px 28px;
+}
+
+.ds-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.ds-header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.ds-header p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.ds-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ds-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.ds-user-name {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ds-user-no {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* Cards */
+.ds-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  padding: 16px;
+}
+
+.ds-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.ds-stat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ds-stat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--blue-soft);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.ds-stat-value {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ds-stat-label {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Content */
+.ds-content {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 16px;
+  align-items: start;
+}
+
+.ds-card h2 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ds-progress {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.ds-progress-bar {
+  height: 100%;
+  background: var(--blue);
+  border-radius: 999px;
+}
+
+.ds-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ds-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ds-step:last-child {
+  border-bottom: none;
+}
+
+.ds-step-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--blue-soft);
+  color: var(--blue);
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.ds-step-badge--done {
+  background: var(--green);
+  color: #fff;
+}
+
+.ds-step-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.ds-step-title {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ds-step-status {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.ds-btn {
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.ds-btn:hover {
+  background: #d4e0fa;
+}
+
+.ds-btn:focus-visible,
+.ds-nav-item:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+/* Jadwal */
+.ds-jadwal ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ds-jadwal li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ds-jadwal li:last-child {
+  border-bottom: none;
+}
+
+.ds-jadwal-title {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ds-jadwal-date {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .ds-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ds-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .ds-layout {
+    flex-direction: column;
+  }
+  .ds-sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+  .ds-nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .ds-nav-item {
+    white-space: nowrap;
+  }
+  .ds-help {
+    display: none;
+  }
+  .ds-main {
+    padding: 18px 14px;
+  }
+  .ds-header {
+    flex-direction: column;
+  }
+  .ds-stats {
+    grid-template-columns: 1fr;
+  }
+}
